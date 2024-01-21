@@ -16,19 +16,19 @@ pip install pandas
 
 O site da Premier League é muito interativo e dinâmico, com pouco conteúdo presente diretamente na página. Abaixo vemos a tela da primeira partida da temporada 23/24.
 
-![overview_partida](imagens/overview_partida.png)
+![overview_partida](imagens/overview_partida.PNG)
 
 Na aba "Stats" estão presentes algumas das estatísticas que desejamos coletar.
 
-![stats](imagens/stats.png)
+![stats](/imagens/stats.PNG)
 
 Escaneando o HTML da página vemos que essas informações são dinamicamente coletadas através de _requests_ feitas para uma API ao clicarmos na aba "Stat". Ao tentar entrar no link das requests obtemos um erro 403, indicando que há algum bloqueio ao acesso aos dados.
 
-![request_blocked](imagens/request_blocked.png)
+![request_blocked](imagens/request_blocked.PNG)
 
 Esse erro surge quando não estamos autorizados a fazer esse tipo de coleta diretamente. Uma solução é colocar dentro do corpo da _request_ o parâmetro "origin" como exatamente igual ao especificado na _request_ observada no DevTools (F12) do navegador. Essa especificação é feita nas funções de coleta elaboradas abaixo.
 
-![request_origin](imagens/request_origin.png)
+![request_origin](imagens/request_origin.PNG)
 
 ## Funções de coleta
 Foram criadas quatro funções:
@@ -124,11 +124,12 @@ with open('cols.txt',mode='w',encoding='utf-8') as cols:
 ## O resultado
 Da forma que propusemos a coleta, obteremos objeto de tipo DataFrame da biblioteca pandas onde cada linha contém as estatísticas de um time de um jogo específico. Ou seja, para cada partida temos duas linhas no DataFrame.
 
-![result](result.png)
+![result](imagens/result.PNG)
 
 É importante mencionar que nos casos onde não há uma determinada estatística para um time numa partida obteremos um NaN que precisa ser tratado como bem entendermos (removendo, imputando zero, etc.)
 
 ## Contato
 
-GitHub: [Jonas Arjona]()
-Linkedin: [Jonas Arjona]()
+* GitHub: [Jonas Arjona](https://github.com/arjona-jonas)
+* E-mail: arjonagv99@gmail.com
+* Linkedin: [Jonas Arjona](https://www.linkedin.com/in/jonas-arjona/)
